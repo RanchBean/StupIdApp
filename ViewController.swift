@@ -11,6 +11,10 @@ import UIKit
 class ViewController: UIViewController
 {
 
+    @IBAction func changeBackgroundColor(sender: UIButton)
+    {
+        changeRandomColor()
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -23,6 +27,15 @@ class ViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
 
+    func changeRandomColor()
+    
+    {
+    let newRed = CGFloat(Double(arc4random_uniform(256)) / 255.000)
+        let newGreen = CGFloat(Double(arc4random_uniform(256)) / 255.000)
+        let newBlue = CGFloat(Double(arc4random_uniform(256)) / 255.000)
+        
+        view.backgroundColor = UIColor(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
 
 }
 
